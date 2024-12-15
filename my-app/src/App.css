@@ -1,0 +1,238 @@
+/* General body styling */
+body {
+  background-color: #1f1e1e;
+  color: #fff;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+/* App container centered on the page */
+.App {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 10px; /* Padding for smaller screens */
+}
+
+/* Header */
+h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.date {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* Wrapper for the todo section */
+.todo-wrapper {
+  background-color: #353434;
+  padding: 20px;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0px 5px 7px black;
+  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+}
+
+/* Todo input section */
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  flex-wrap: wrap; /* Wrap inputs on smaller screens */
+}
+
+.todo-input-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+  margin-bottom: 15px; /* Spacing between rows on small screens */
+  flex-grow: 1; /* Allow items to grow on small screens */
+}
+
+.todo-input-item:last-child {
+  margin-right: 0; /* Remove margin for the last item */
+}
+
+.todo-input-item label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input {
+  padding: 8px;
+  border: none;
+  width: 100%; /* Take up full width */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.todo-input-item input:focus {
+  outline: 2px solid rgb(0, 230, 122);
+}
+
+/* Buttons */
+.primaryBtn {
+  background-color: rgb(0, 230, 122);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%; /* Full width on smaller screens */
+}
+
+.primaryBtn:hover {
+  background-color: rgb(4, 196, 106);
+}
+
+.btn-area {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-area button {
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: rgb(71, 71, 71);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: auto; /* Default size for buttons */
+}
+
+.btn-area button.active {
+  background-color: rgb(0, 230, 122);
+}
+
+/* Todo list */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.todo-list-item {
+  background-color: #414040;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.todo-list-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: rgb(0, 230, 122);
+}
+
+.todo-list-item p {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.todo-item-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.pen-icon,
+.check-icon,
+.icns {
+  font-size: 25px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.pen-icon:hover {
+  color: #4caf50;
+}
+
+.icns:hover {
+  color: red;
+}
+
+.check-icon:hover {
+  color: #4caf50;
+}
+
+.todo-list-item.completed {
+  background-color: #606060;
+  text-decoration: line-through;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-wrapper {
+    padding: 15px;
+  }
+
+  .todo-input-item {
+    margin-right: 0;
+    margin-bottom: 10px; /* Add spacing between rows */
+  }
+
+  .todo-input {
+    flex-direction: column; /* Stack input items vertically */
+  }
+
+  .btn-area {
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 5px; /* Reduce gap */
+  }
+
+  .btn-area button {
+    width: 100%; /* Full width for buttons on smaller screens */
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px; /* Reduce font size for smaller screens */
+  }
+
+  .todo-wrapper {
+    width: 100%; /* Ensure wrapper takes full width */
+  }
+
+  .primaryBtn {
+    padding: 8px; /* Adjust button padding */
+  }
+
+  .todo-list-item {
+    padding: 15px; /* Reduce padding for todo items */
+  }
+
+  .todo-list-item h3 {
+    font-size: 18px; /* Reduce title font size */
+  }
+
+  .todo-list-item p {
+    font-size: 14px; /* Reduce description font size */
+  }
+
+  .pen-icon,
+  .check-icon,
+  .icns {
+    font-size: 20px; /* Smaller icon sizes */
+  }
+}
